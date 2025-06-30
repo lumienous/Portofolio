@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alvina | Portofolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <style>
+            body { 
+                background-color: #e8d5c7; 
+                color: #504b38; 
+            }
+            
+            .navbar {
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .navbar a {
+                color: #504b38;
+                text-decoration: none;
+                margin: 0 1rem;
+                font-weight: bold;
+            }
+            .navbar a:hover {
+                color: #605262;
+            }
+            .navbar .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .navbar .menu {
+                display: flex;
+                align-items: center;
+            }
+            .navbar .menu-icon {
+                display: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            @media (max-width: 768px) {
+                .navbar .menu {
+                    display: none;
+                    flex-direction: column;
+                    width: 100%;
+                    background-color: #8b7355;
+                }
+                .navbar .menu.active {
+                    display: flex;
+                }
+                .navbar .menu-icon {
+                    display: block;
+                }
+            }
+
+            .portfolio-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90%;
+                height: 750px;
+                position: relative;
+            }
+
+            .portfolio-item {
+                position: absolute;
+                width: 90%;
+                max-width: 600px;
+                height: auto;
+                opacity: 0;
+                transform: translateX(100%);
+                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            }
+
+            .portfolio-item.active {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container mx-auto pt-5 pb-2 px-6" data-aos="zoom-in-right" data-aos-duration="1000" style="color: #504b38;">
+            <nav class="navbar mx-5 mt-3 mb-5" aria-label="Main navigation" role="navigation">
+                <div class="text-2xl font-bold" data-aos="zoom-in" data-aos-duration="1000">
+                    <a href="/">Alvina's</a>
+                </div>
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                <ul class="menu" id="menu">
+                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <a class="text-[#c3ae8c] font-bold hover:text-[#504b38]" href="index2.html">Home</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <a class="hover:text-[#504b38]" href="profile.html">Profile</a>
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                        <a class="hover:text-[#504b38]" href="portofolio.html">Portfolio</a>
+                    </li>
+                </ul>
+            </nav>
+            <br>
+            <br>
+        </section>
+        <div class="container mx-auto py-10 text-center">
+            <h1 class="text-4xl font-bold mb-6">My Recent Works</h1>
+            <div class="portfolio-container mx-auto flex justify-center items-center overflow-hidden">
+                <img class="portfolio-item active w-full max-w-lg h-auto object-cover rounded-lg shadow-md transition-all duration-500 ease-in-out" src="aset/Proposal Event Konser.png" alt="Project 1">
+                <img class="portfolio-item w-full max-w-lg h-auto object-cover rounded-lg shadow-md transition-all duration-500 ease-in-out" src="aset/Bullying .png" alt="Project 2">
+                <img class="portfolio-item w-full max-w-lg h-auto object-cover rounded-lg shadow-md transition-all duration-500 ease-in-out" src="aset/Poster Bulan Bahasa .png" alt="Project 3">
+                <img class="portfolio-item w-full max-w-lg h-auto object-cover rounded-lg shadow-md transition-all duration-500 ease-in-out" src="aset/Halloween.png" alt="Project 4">
+            </div>
+            <button class="mt-4 px-6 py-2 bg-[#c3ae8c] text-white rounded-lg shadow-md hover:bg-[#504b38]" onclick="nextProject()">Next</button>
+        </div>
+        
+        <footer class="bg-[#6b4f2c] text-white py-8"  data-aos="fade-up">
+            <div class="container flex flex-col md:flex-row justify-around items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-bold">Alvina's</h2>
+                </div>
+        
+                <nav class="mr-5">
+                    <ul class="flex flex-wrap gap-6 text-sm">
+                        <li><a href="index2.html" class="hover:underline">Home</a></li>
+                        <li><a href="profile.html" class="hover:underline">Profile</a></li>
+                        <li><a href="portofolio.html" class="hover:underline">Portofolio</a></li>
+                    </ul>
+                </nav>
+        
+                <div class="flex space-x-4">
+                    <a href="https://github.com/lumienous" target="_blank" class="hover:scale-110 transition">
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alvina-p-a76441323" target="_blank" class="hover:scale-110 transition">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="mailto:alvinaaklv@gmail.com" class="hover:scale-110 transition">
+                        <i class="fa-solid fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+                
+            </div>
+        
+            <div class="text-center text-xs opacity-75 mt-6">
+                © 2025 Alvina. All rights reserved.
+            </div>
+        </footer>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+            
+            function toggleMenu() {
+                const menu = document.getElementById("menu");
+                menu.classList.toggle("active");
+            }
+
+            // Menutup menu saat mengklik di luar menu
+            document.addEventListener("click", function(event) {
+                const menu = document.getElementById("menu");
+                const menuIcon = document.querySelector(".menu-icon");
+                if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                    menu.classList.remove("active");
+                }
+            });
+        
+            let currentIndex = 0;
+            const items = document.querySelectorAll(".portfolio-item");
+        
+            function nextProject() {
+                // Hide the current active item
+                items[currentIndex].classList.remove("active");
+                
+                // Move to the next item
+                currentIndex = (currentIndex + 1) % items.length;
+                
+                // Show the next item
+                items[currentIndex].classList.add("active");
+            }
+        </script>
+    </body>
+</html>

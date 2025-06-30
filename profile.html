@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alvina | Profile</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+        <style>
+            body { 
+                background-color: #e8d5c7; 
+                color: #504b38; 
+            }
+            #fun-fact-image {
+                border: 5px solid #8b7355;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 1024px) {
+                .flex-col {
+                    flex-direction: column;
+                }
+                .text-center {
+                    text-align: center;
+                }
+                .w-full {
+                    width: 100%;
+                }
+            }
+        
+            .navbar {
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .navbar a {
+                color: #504b38;
+                text-decoration: none;
+                margin: 0 1rem;
+                font-weight: bold;
+            }
+            .navbar a:hover {
+                color: #605262;
+            }
+            .navbar .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .navbar .menu {
+                display: flex;
+                align-items: center;
+            }
+            .navbar .menu-icon {
+                display: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            @media (max-width: 768px) {
+                .navbar .menu {
+                    display: none;
+                    flex-direction: column;
+                    width: 100%;
+                    background-color: #8b7355;
+                }
+                .navbar .menu.active {
+                    display: flex;
+                }
+                .navbar .menu-icon {
+                    display: block;
+                }
+            }
+
+            #background {
+                position: relative;
+                width: 100%;
+                height: 400px; /* Adjust height as needed */
+            }
+
+            #background img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Ensures image covers the div */
+                filter: brightness(70%); /* Optional: darken image for better text readability */
+            }
+
+            .hobbies-container {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin: 40px 0;
+            }
+
+            .hobby-card {
+                width: 300px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                text-align: center;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .hobby-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .hobby-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .hobby-info {
+                padding: 15px;
+            }
+
+            .hobby-info h3 {
+                margin: 10px 0;
+                font-size: 1.5rem;
+                color: #504b38;
+            }
+
+            .hobby-info p {
+                font-size: 1rem;
+                color: #666;
+            }
+
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+            }
+
+            .song-card {
+                background-color: #c3ae8c;
+                border-radius: 12px;
+                padding: 10px;
+                width: 400px; 
+                height: auto;
+                text-align: center;
+                color: white;
+                transition: transform 0.3s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .song-card img {
+                padding: 10px;
+                height: auto;
+                max-height: 550px;
+                object-fit: contain; 
+                border-radius: 10px;
+            }
+
+            .song-card:hover {
+                transform: scale(0.85);
+            }
+
+            .swiper-slide-active .song-card {
+                transform: scale(1);
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <section class="container mx-auto pt-5 pb-20 px-6" data-aos="zoom-in-right" data-aos-duration="1000" style="background-color: #f4e9dd; color: #504b38;">
+            <nav class="navbar">
+                <div class="logo">Alvina's</div>
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                <div class="menu" id="menu">
+                    <a href="index2.html">Home</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="portofolio.html">Portofolio</a>
+                </div>
+            </nav>
+            <br>
+            <div id="background">
+                <img src="aset/background.jpg" alt="background" data-aos="zoom-in-right">
+            </div>        
+            <br>
+            <br>
+            <div class="pt-5 flex flex-col lg:flex-row items-center justify-center gap-8">
+                <div class="w-full lg:w-1/3 flex justify-center lg:justify-start">
+                    <img id="fun-fact-image" src="aset/tmi.jpg" alt="Fun Fact Image" class="rounded-lg shadow-lg w-full max-w-xs lg:max-w-md">
+                </div>
+        
+                <div class="w-full lg:w-2/3 text-center lg:text-left">
+                    <h2 class="text-3xl font-bold mb-6" style="color: #8b7355;">TMIs & Fun Facts</h2>
+                    <p class="text-lg leading-relaxed">
+                        Hello, I'm Alvina. I'm a student at Multimedia Nusantara University, majoring in Informatics. I was born on 31st July, and my personality type is INTJ. I'm passionate about problem-solving and exploring creative ways to innovate. I enjoy learning new things and applying my knowledge to real-world challenges.
+                        <br><br>
+                        Fun fact: I can watch dramas for up to 10 episodes a day when I have spare time and really enjoy the storyline. I'm also a selenophile—I love the sound of nature and find the moon incredibly captivating.
+                        <br><br>
+                        Another TMI: Sometimes I read English text in a Singaporean accent, and I often switch accents just for fun—it keeps things interesting!
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="container mx-auto py-10 px-6" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center">Hobbies</h2>
+            <div class="hobbies-container">
+                <div class="hobby-card">
+                    <img src="aset/reading.jpg" alt="Reading Books">
+                    <div class="hobby-info">
+                        <h3>Reading Books</h3>
+                        <p>I enjoy immersing myself in different stories and exploring new ideas through books.</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <img src="aset/music.jpg" alt="Listening to Music">
+                    <div class="hobby-info">
+                        <h3>Listening to Music</h3>
+                        <p>Music helps me relax and inspires me in many ways. I love discovering new songs and artists.</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <img src="aset/nonton.jpg" alt="Watch">
+                    <div class="hobby-info">
+                        <h3>Watching Dramas</h3>
+                        <p>Watching dramas is my favorite way to relax and immerse myself in captivating stories and characters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="container mx-auto py-10 px-6" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center">Recent Songs</h2>
+            <div class="relative mt-6">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="song-card py-10">
+                                <img src="aset/lagu1.png" alt="Enhypen" id="lagu">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="song-card py-10">
+                                <img src="aset/lagu2.png" alt="WayV" id="lagu">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="song-card py-10">
+                                <img src="aset/lagu3.png" alt="Izna" id="lagu">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="song-card py-10">
+                                <img src="aset/lagu4.png" alt="Izna" id="lagu">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="song-card py-10">
+                                <img src="aset/lagu5.png" alt="Izna" id="lagu">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Swiper Navigation Buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        
+        
+        <section class="container mx-auto py-10 px-6" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-8">Favorite Artists</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Artist 1: ENHYPEN -->
+                <div class="group relative bg-[#c3ae8c] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+                    <img src="aset/enhypen.jpg" alt="ENHYPEN" class="w-full h-72 object-cover group-hover:brightness-50 transition">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <h3 class="text-xl font-bold text-white">ENHYPEN</h3>
+                        <p class="text-sm text-white text-center max-w-xs mt-2">
+                            A South Korean boy group formed by Belift Lab. Known for their powerful performances and deep storytelling.
+                        </p>
+                        <a href="https://youtu.be/rDolt3jJRsM?si=0LFbf9z8595tbtf8" target="_blank" 
+                        class="mt-4 bg-white text-[#6b4f2c] font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-200 transition">
+                        More Info! ⓘ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Artist 2: WAYV -->
+                <div class="group relative bg-[#c3ae8c] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+                    <img src="aset/WayV.jpg" alt="WayV" class="w-full h-72 object-cover group-hover:brightness-50 transition">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <h3 class="text-xl font-bold text-white">WayV</h3>
+                        <p class="text-sm text-white text-center max-w-xs mt-2">
+                            A Chinese boy group under SM Entertainment, part of the NCT universe, known for their strong vocals and dance.
+                        </p>
+                        <a href="https://youtu.be/iWgE9MfGYl8?si=yAKnM5pfkmCjKkLt" target="_blank" 
+                        class="mt-4 bg-white text-[#6b4f2c] font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-200 transition">
+                        More Info! ⓘ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Artist 3: IZNA -->
+                <div class="group relative bg-[#c3ae8c] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+                    <img src="aset/izna.jpg" alt="Izna" class="w-full h-72 object-cover group-hover:brightness-50 transition">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <h3 class="text-xl font-bold text-white">IZNA</h3>
+                        <p class="text-sm text-white text-center max-w-xs mt-2">
+                            A 7-member South Korean girl group under WAKEONE Entertainment, which debuted on November 25, 2024, with their first mini album, N/a.
+                        </p>
+                        <a href="https://youtu.be/d3mqW9wqqx0?si=cAyHsA-M2sHpPWik" target="_blank" 
+                        class="mt-4 bg-white text-[#6b4f2c] font-bold py-2 px-4 rounded-lg shadow-md hover:bg-gray-200 transition">
+                        More Info! ⓘ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="container mx-auto py-20 px-6" data-aos="fade-up" style="background-color: #f4e9dd; color: #504b38;">
+            <h2 class="text-3xl font-bold text-center mb-6" style="color: #8b7355;">Contact Me</h2>
+            <p class="text-center">Feel free to reach out to me for collaborations or just to say hi!</p>
+        </section>
+        
+
+        <footer class="bg-[#6b4f2c] text-white py-8"  data-aos="fade-up">
+            <div class="container flex flex-col md:flex-row justify-around items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-bold">Alvina's</h2>
+                </div>
+        
+                <nav class="mr-4">
+                    <ul class="flex flex-wrap gap-6 text-sm">
+                        <li><a href="index2.html" class="hover:underline">Home</a></li>
+                        <li><a href="profile.html" class="hover:underline">Profile</a></li>
+                        <li><a href="portofolio.html" class="hover:underline">Portofolio</a></li>
+                    </ul>
+                </nav>
+        
+                <div class="flex space-x-4">
+                    <a href="https://github.com/lumienous" target="_blank" class="hover:scale-110 transition">
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alvina-p-a76441323" target="_blank" class="hover:scale-110 transition">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="mailto:alvinaaklv@gmail.com" class="hover:scale-110 transition">
+                        <i class="fa-solid fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        
+            <div class="text-center text-xs opacity-75 mt-6">
+                © 2025 Alvina. All rights reserved.
+            </div>
+        </footer>
+        
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+
+            function toggleMenu() {
+                const menu = document.getElementById('menu');
+                menu.classList.toggle('active');
+            }
+
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1, // Show 1 slide at a time by default
+                centeredSlides: true, // Keep the main song in the center
+                loop: true, // Infinite loop scrolling
+                spaceBetween: 20, // Space between slides
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    768: { slidesPerView: 2 }, // Show 2 slides on tablets
+                    1024: { slidesPerView: 3 }, // Show 3 slides on larger screens
+                }
+            });
+        </script>
+    </body>
+</html>
